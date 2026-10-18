@@ -19,8 +19,8 @@ export const siteConfig = {
   favicon: "/icon.svg", // lives at src/app/icon.svg (replace the file to change it)
 
   contact: {
-    phone: "+91 98765 43210", // REPLACE
-    whatsapp: "919876543210", // REPLACE — country code + number, digits only
+    phone: "+91 9644704534", // REPLACE
+    whatsapp: "91 9644704534", // REPLACE — country code + number, digits only
     email: "hello@tohfa.example", // REPLACE
     address: "Near Bank of India, Maksi Road, Vijayaganj Mandi",
     city: "Ujjain",
