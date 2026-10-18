@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-hidden="true">
+  <rect width="800" height="1000" fill="#E6DEEE"/>
+  <defs><pattern id="d" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="2" fill="#24131E" opacity=".07"/></pattern></defs><rect width="800" height="1000" fill="url(#d)"/>
+  <circle cx="400" cy="520" r="310" fill="#fff" opacity=".32"/>
+  <g transform="translate(400 570) scale(1.28) translate(-400 -540)"><ellipse cx="400" cy="795" rx="240" ry="22" fill="#24131E" opacity=".14"/>
+  <rect x="225" y="640" width="150" height="140" rx="10" fill="#B4154F"/><circle cx="300" cy="710" r="38" fill="#fff" opacity=".92"/>
+  <rect x="425" y="640" width="150" height="140" rx="10" fill="#F2B544"/><path d="M500 668 L538 744 H462Z" fill="#24131E" opacity=".85"/>
+  <g transform="rotate(-7 400 560)"><rect x="325" y="495" width="150" height="140" rx="10" fill="#2F3E6B"/><rect x="368" y="538" width="64" height="54" rx="4" fill="#fff" opacity=".92"/></g></g>
+</svg>

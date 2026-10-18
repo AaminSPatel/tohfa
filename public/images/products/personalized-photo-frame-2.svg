@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-hidden="true">
+  <rect width="800" height="1000" fill="#E1E8DA"/>
+  <defs><pattern id="d" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="2" fill="#24131E" opacity=".07"/></pattern></defs><rect width="800" height="1000" fill="url(#d)"/>
+  <circle cx="400" cy="520" r="310" fill="#fff" opacity=".32"/>
+  <g transform="translate(400 570) scale(1.28) translate(-400 -540)"><ellipse cx="400" cy="790" rx="190" ry="22" fill="#24131E" opacity=".14"/>
+  <path d="M440 330 L560 790 L500 790 Z" fill="#825b3b"/>
+  <rect x="235" y="290" width="330" height="440" rx="4" fill="#B98254"/>
+  <rect x="235" y="290" width="330" height="440" rx="4" fill="none" stroke="#8b623f" stroke-width="4"/>
+  <rect x="262" y="317" width="276" height="386" fill="#FBF6EE"/>
+  <rect x="288" y="343" width="224" height="324" fill="#FBE9C2"/>
+  <circle cx="455" cy="425" r="32" fill="#F2B544"/>
+  <path d="M288 600 C330 520 380 540 420 590 C450 550 490 540 512 575 V667 H288Z" fill="#6F8F6B"/>
+  <path d="M288 640 C340 600 400 620 512 630 V667 H288Z" fill="#4F6E4C"/>
+  <path transform="translate(400 505) scale(1.2)" d="M0 8 C0 -8 -28 -12 -28 8 C-28 26 0 44 0 44 C0 44 28 26 28 8 C28 -12 0 -8 0 8Z" fill="#B4154F" opacity="1"/></g>
+</svg>

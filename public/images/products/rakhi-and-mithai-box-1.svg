@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-hidden="true">
+  <rect width="800" height="1000" fill="#F8E6BE"/>
+  
+  <circle cx="400" cy="520" r="310" fill="#fff" opacity=".32"/>
+  <g transform="translate(400 540) scale(1) translate(-400 -540)"><ellipse cx="400" cy="800" rx="230" ry="22" fill="#24131E" opacity=".14"/>
+    <rect x="230" y="600" width="340" height="190" rx="8" fill="#C99A6B"/>
+    <rect x="210" y="562" width="380" height="58" rx="8" fill="#ab835b"/>
+    <rect x="380" y="562" width="40" height="228" fill="#F2B544"/>
+    <g transform="translate(400 470)">
+      <path d="M-30 20 C-110 90 -150 200 -170 300" stroke="#B4154F" stroke-width="9" fill="none" stroke-linecap="round"/>
+      <path d="M30 20 C110 90 150 200 170 300" stroke="#B4154F" stroke-width="9" fill="none" stroke-linecap="round"/>
+      <path d="M-12 40 C-60 120 -90 230 -100 320" stroke="#F2B544" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <ellipse cx="0" cy="-62" rx="26" ry="46" transform="rotate(0)" fill="#D9A441"/><ellipse cx="0" cy="-62" rx="26" ry="46" transform="rotate(45)" fill="#F2B544"/><ellipse cx="0" cy="-62" rx="26" ry="46" transform="rotate(90)" fill="#D9A441"/><ellipse cx="0" cy="-62" rx="26" ry="46" transform="rotate(135)" fill="#F2B544"/><ellipse cx="0" cy="-62" rx="26" ry="46" transform="rotate(180)" fill="#D9A441"/><ellipse cx="0" cy="-62" rx="26" ry="46" transform="rotate(225)" fill="#F2B544"/><ellipse cx="0" cy="-62" rx="26" ry="46" transform="rotate(270)" fill="#D9A441"/><ellipse cx="0" cy="-62" rx="26" ry="46" transform="rotate(315)" fill="#F2B544"/><circle r="48" fill="#B4154F"/><circle r="30" fill="#FBE9C2"/><circle r="13" fill="#B4154F"/>
+    </g></g>
+</svg>

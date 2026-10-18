@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-hidden="true">
+  <rect width="800" height="1000" fill="#DCE6EE"/>
+  <defs><pattern id="d" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="2" fill="#24131E" opacity=".07"/></pattern></defs><rect width="800" height="1000" fill="url(#d)"/>
+  <circle cx="400" cy="520" r="310" fill="#fff" opacity=".32"/>
+  <g transform="translate(400 570) scale(1.28) translate(-400 -540)"><ellipse cx="400" cy="790" rx="270" ry="22" fill="#24131E" opacity=".14"/><rect x="180" y="550" width="150" height="230" rx="16" fill="#fff" opacity=".7" stroke="#E7DCD4" stroke-width="3"/>
+  <rect x="190" y="614.4" width="130" height="161" rx="8" fill="#2F3E6B"/>
+  <line x1="255" y1="614.4" x2="255" y2="592.4" stroke="#24131E" stroke-width="4"/>
+  <path d="M255 532.4 C233 562.4 239 586.4 255 592.4 C271 586.4 277 562.4 255 532.4Z" fill="#F2B544"/><rect x="315" y="490" width="170" height="300" rx="16" fill="#fff" opacity=".7" stroke="#E7DCD4" stroke-width="3"/>
+  <rect x="325" y="574" width="150" height="210" rx="8" fill="#636e90"/>
+  <line x1="400" y1="574" x2="400" y2="552" stroke="#24131E" stroke-width="4"/>
+  <path d="M400 492 C378 522 384 546 400 552 C416 546 422 522 400 492Z" fill="#F2B544"/><rect x="475" y="580" width="150" height="200" rx="16" fill="#fff" opacity=".7" stroke="#E7DCD4" stroke-width="3"/>
+  <rect x="485" y="636" width="130" height="140" rx="8" fill="#B4154F"/>
+  <line x1="550" y1="636" x2="550" y2="614" stroke="#24131E" stroke-width="4"/>
+  <path d="M550 554 C528 584 534 608 550 614 C566 608 572 584 550 554Z" fill="#F2B544"/></g>
+</svg>

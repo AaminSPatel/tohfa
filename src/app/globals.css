@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------
+   DESIGN TOKENS  (change the look of the whole site from here)
+   Colours are "R G B" so Tailwind can apply opacity (e.g. bg-ink/50).
+------------------------------------------------------------------- */
+:root {
+  --c-paper: 250 246 243;      /* #FAF6F3 page background          */
+  --c-ink: 36 19 30;           /* #24131E aubergine-black text      */
+  --c-ink-soft: 74 54 65;      /* #4A3641                           */
+  --c-muted: 107 85 96;        /* #6B5560 secondary text            */
+  --c-rani: 180 21 79;         /* #B4154F the one strong accent     */
+  --c-rani-dark: 142 15 61;    /* #8E0F3D                           */
+  --c-marigold: 242 181 68;    /* #F2B544 soft accent (tags, twine) */
+  --c-marigold-soft: 251 233 194;
+  --c-blush: 245 226 225;      /* #F5E2E1                           */
+  --c-blush-deep: 235 201 203;
+  --c-sand: 239 230 221;
+  --c-line: 231 220 212;
+  --c-leaf: 47 125 79;         /* in-stock green                    */
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 160ms;
+  --dur-base: 280ms;
+  --dur-slow: 700ms;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display font-normal;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  ::selection { background: rgb(var(--c-marigold) / 0.55); }
+  :focus-visible {
+    outline: 2px solid rgb(var(--c-rani));
+    outline-offset: 3px;
+  }
+  img, svg { display: block; max-width: 100%; }
+  button { cursor: pointer; }
+  button:disabled { cursor: not-allowed; }
+  summary { cursor: pointer; }
+  summary::-webkit-details-marker { display: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page { @apply mx-auto w-full max-w-page px-5 sm:px-8 lg:px-12; }
+  .section-y { @apply py-16 sm:py-24 lg:py-28; }
+  footer :focus-visible, .on-dark :focus-visible { outline-color: rgb(var(--c-marigold)); }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+
+  /* Gift-tag silhouette with a punched hole (hero tag, price tags, badges) */
+  .gift-tag {
+    clip-path: polygon(16% 0, 84% 0, 100% 9%, 100% 100%, 0 100%, 0 9%);
+    -webkit-mask: radial-gradient(circle 8px at 50% 26px, transparent 96%, #000 100%);
+    mask: radial-gradient(circle 8px at 50% 26px, transparent 96%, #000 100%);
+  }
+
+  .prose-gift { @apply text-ink-soft leading-relaxed; }
+  .prose-gift p + p { @apply mt-4; }
+  .prose-gift h2 { @apply mt-10 mb-3 text-display-sm text-ink; }
+  .prose-gift ul { @apply mt-3 list-disc space-y-1.5 pl-5; }
+  .prose-gift a { @apply text-rani underline underline-offset-4; }
+}

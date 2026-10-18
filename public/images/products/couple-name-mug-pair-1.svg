@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-hidden="true">
+  <rect width="800" height="1000" fill="#DCE6EE"/>
+  
+  <circle cx="400" cy="520" r="310" fill="#fff" opacity=".32"/>
+  <g transform="translate(400 540) scale(1) translate(-400 -540)"><ellipse cx="400" cy="795" rx="290" ry="22" fill="#24131E" opacity=".14"/><g transform="translate(300 780) scale(0.88)">
+  <path d="M110 -215 q78 0 78 62 q0 62 -78 62" fill="none" stroke="#B4154F" stroke-width="26"/>
+  <rect x="-110" y="-260" width="220" height="260" rx="24" fill="#B4154F"/>
+  <ellipse cx="0" cy="-260" rx="110" ry="18" fill="#90113f"/>
+  <ellipse cx="0" cy="-260" rx="94" ry="11" fill="#5A3A2B"/>
+  <path transform="translate(0 -160) scale(1.15)" d="M0 8 C0 -8 -28 -12 -28 8 C-28 26 0 44 0 44 C0 44 28 26 28 8 C28 -12 0 -8 0 8Z" fill="#fff" opacity="0.92"/></g><g transform="translate(515 792) scale(0.88)">
+  <path d="M110 -215 q78 0 78 62 q0 62 -78 62" fill="none" stroke="#2F3E6B" stroke-width="26"/>
+  <rect x="-110" y="-260" width="220" height="260" rx="24" fill="#2F3E6B"/>
+  <ellipse cx="0" cy="-260" rx="110" ry="18" fill="#263256"/>
+  <ellipse cx="0" cy="-260" rx="94" ry="11" fill="#5A3A2B"/>
+  <path transform="translate(0 -160) scale(1.15)" d="M0 8 C0 -8 -28 -12 -28 8 C-28 26 0 44 0 44 C0 44 28 26 28 8 C28 -12 0 -8 0 8Z" fill="#fff" opacity="0.92"/></g></g>
+</svg>

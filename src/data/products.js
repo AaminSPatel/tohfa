@@ -1,0 +1,345 @@
+import { productImages } from "./images";
+
+/**
+ * Starter catalogue. With MongoDB connected, products live in the database and are
+ * managed from /admin (use Settings > "Import starter products" once).
+ * Without MongoDB, the shop reads from this file.
+ *
+ * personalisation: { label, placeholder, maxLength, required } shows a text box on the product page.
+ */
+const raw = [
+  {
+    slug: "personalized-photo-frame",
+    name: "Personalised Wooden Photo Frame",
+    shortDescription: "Your favourite photo, a name and a date, framed in warm sheesham wood.",
+    description:
+      "Everyone has one photo that says it all. We print yours on matte archival paper, set it in a hand-finished sheesham wood frame and engrave the name and date below it.\n\nUpload nothing now. After you order, we'll message you on WhatsApp for the photo and show you a preview before we print.",
+    price: 899, compareAtPrice: 1199, category: "Personalised Gifts", categorySlug: "personalised-gifts",
+    tags: ["photo", "frame", "wood", "engraved"], stock: 42, featured: true, bestseller: true, rating: 4.8, reviewCount: 214,
+    occasion: ["birthday", "anniversary", "housewarming"],
+    personalisation: { label: "Name and date to engrave", placeholder: "Mummy & Papa, 14 Feb 1998", maxLength: 40, required: true },
+    specifications: [
+      { label: "Size", value: "8 x 10 in (20 x 25 cm)" },
+      { label: "Material", value: "Sheesham wood, matte archival print" },
+      { label: "Includes", value: "Free-standing back, wall hook, gift card" },
+      { label: "Made in", value: "Ujjain, in 2 to 3 days" },
+    ],
+    seoTitle: "Personalised Wooden Photo Frame with Name and Date",
+    seoDescription: "Custom sheesham wood photo frame with your photo, name and date engraved. Preview before printing. Delivered across India.",
+  },
+  {
+    slug: "wooden-love-gift-box",
+    name: "Wooden Love Gift Box",
+    shortDescription: "A keepsake box filled with a candle, chocolates, a handwritten card and room for your own notes.",
+    description:
+      "A hinged wooden box that lives on a shelf long after the chocolates are gone. Inside: a hand-poured rose candle, six dark chocolates, a pressed-flower bookmark and a card in our handwriting, saying what you write in the gift note.\n\nThe lid is engraved with your two names.",
+    price: 1499, compareAtPrice: 1899, category: "Anniversary Gifts", categorySlug: "anniversary-gifts",
+    tags: ["box", "romantic", "chocolates", "candle"], stock: 18, featured: true, bestseller: true, rating: 4.9, reviewCount: 167,
+    occasion: ["anniversary", "birthday"],
+    personalisation: { label: "Two names for the lid", placeholder: "Aman + Riya", maxLength: 24, required: true },
+    specifications: [
+      { label: "Box size", value: "25 x 18 x 9 cm" },
+      { label: "Inside", value: "Rose candle, 6 dark chocolates, bookmark, card" },
+      { label: "Allergens", value: "Chocolates contain milk and may contain nuts" },
+      { label: "Made in", value: "Ujjain, in 2 to 3 days" },
+    ],
+    seoTitle: "Wooden Love Gift Box for Anniversary",
+    seoDescription: "Engraved wooden anniversary gift box with candle, chocolates and handwritten card. Free personalisation. Delivered across India.",
+  },
+  {
+    slug: "couple-name-mug-pair",
+    name: "Couple Name Mug Pair",
+    shortDescription: "Two ceramic mugs with your names, packed in a gift box with a handwritten tag.",
+    description:
+      "Two 330 ml ceramic mugs that live next to each other on the shelf. Each is printed with one name and a small heart, in a dishwasher-safe, microwave-safe finish.\n\nPacked in a snug two-slot box with tissue and a tag.",
+    price: 749, compareAtPrice: 999, category: "Couple Gifts", categorySlug: "couple-gifts",
+    tags: ["mug", "couple", "ceramic", "names"], stock: 60, featured: false, bestseller: true, rating: 4.7, reviewCount: 131,
+    occasion: ["anniversary", "housewarming", "birthday"],
+    personalisation: { label: "Two names", placeholder: "Karan, Meera", maxLength: 30, required: true },
+    specifications: [
+      { label: "Capacity", value: "330 ml each, set of 2" },
+      { label: "Care", value: "Dishwasher and microwave safe" },
+      { label: "Print", value: "Sublimation, won't fade in the wash" },
+    ],
+    seoTitle: "Couple Name Mug Pair, Personalised Gift Set",
+    seoDescription: "Set of two personalised ceramic mugs with names, gift-boxed. Microwave and dishwasher safe. Delivered across India.",
+  },
+  {
+    slug: "starry-night-candle-trio",
+    name: "Starry Night Candle Trio",
+    shortDescription: "Three hand-poured soy candles in sandalwood, rose and night jasmine.",
+    description:
+      "Poured in small batches in Ujjain with soy wax and cotton wicks. Sandalwood for evenings, rose for mornings, night jasmine for guests. Each burns for about 25 hours.\n\nArrives in a kraft box tied with twine.",
+    price: 1099, compareAtPrice: 1399, category: "Home & Decor", categorySlug: "home-decor",
+    tags: ["candle", "soy wax", "fragrance", "housewarming"], stock: 35, featured: true, bestseller: false, rating: 4.8, reviewCount: 96,
+    occasion: ["housewarming", "diwali", "thank-you"],
+    specifications: [
+      { label: "Set", value: "3 candles, 150 g each" },
+      { label: "Burn time", value: "About 25 hours each" },
+      { label: "Wax", value: "100% soy, cotton wick" },
+      { label: "Scents", value: "Sandalwood, rose, night jasmine" },
+    ],
+    seoTitle: "Hand-Poured Soy Candle Gift Set of 3",
+    seoDescription: "Sandalwood, rose and night jasmine soy candles in a gift box. Housewarming and thank-you gift, delivered across India.",
+  },
+  {
+    slug: "birthday-surprise-box",
+    name: "Birthday Surprise Box",
+    shortDescription: "Twelve small things in one big box: sweets, a mug, a journal, a candle and a note from you.",
+    description:
+      "For the person who says they don't want anything. Twelve small, useful and sweet things come in one wrapped box: a printed mug, a pocket journal, a vanilla candle, chocolates, a bookmark and more, finished with a card in your words.\n\nTell us a little about them and we'll swap items to suit.",
+    price: 1899, compareAtPrice: 2299, category: "Birthday Gifts", categorySlug: "birthday-gifts",
+    tags: ["hamper", "surprise", "birthday", "box"], stock: 25, featured: true, bestseller: true, rating: 4.9, reviewCount: 142,
+    occasion: ["birthday"],
+    personalisation: { label: "Name for the mug and card", placeholder: "Ananya", maxLength: 20, required: true },
+    specifications: [
+      { label: "Pieces", value: "12 items in one box" },
+      { label: "Box size", value: "32 x 24 x 12 cm" },
+      { label: "Made in", value: "Ujjain, ships in 2 to 3 days" },
+    ],
+    seoTitle: "Birthday Surprise Gift Box with 12 Items",
+    seoDescription: "A wrapped birthday gift box with 12 curated items and a personalised card. Free personalisation, delivered across India.",
+  },
+  {
+    slug: "storybook-night-gift-set",
+    name: "Storybook Night Gift Set",
+    shortDescription: "A personalised storybook starring your child, with a warm-glow night lamp.",
+    description:
+      "A 20-page hardcover storybook where your child is the hero, with their name, age and best friend written into the story. Paired with a soft night lamp for reading.\n\nPrinted on thick, rounded-corner pages so it survives bedtime.",
+    price: 1299, compareAtPrice: null, category: "Kids Gifts", categorySlug: "kids-gifts",
+    tags: ["book", "kids", "story", "lamp"], stock: 22, featured: false, bestseller: false, rating: 4.8, reviewCount: 58,
+    occasion: ["birthday"],
+    personalisation: { label: "Child's name and age", placeholder: "Anaya, 5", maxLength: 24, required: true },
+    specifications: [
+      { label: "Book", value: "20 pages, hardcover, rounded corners" },
+      { label: "Lamp", value: "USB rechargeable, warm light" },
+      { label: "Age", value: "3 to 8 years" },
+    ],
+    seoTitle: "Personalised Storybook and Night Lamp for Kids",
+    seoDescription: "Custom children's storybook with your child's name and a night lamp. Child-safe, delivered across India.",
+  },
+  {
+    slug: "monogram-diary-pen-set",
+    name: "Monogram Leather Diary and Pen Set",
+    shortDescription: "A vegan-leather diary with initials in gold foil and a weighted metal pen.",
+    description:
+      "A5 diary with 192 cream pages that don't bleed through, a ribbon marker and an elastic closure. Initials are foil-stamped on the cover, and the pen is engraved to match.\n\nBulk orders from 10 pieces can carry your company logo. Message us for a quote.",
+    price: 999, compareAtPrice: 1299, category: "Corporate Gifts", categorySlug: "corporate-gifts",
+    tags: ["diary", "corporate", "monogram", "pen"], stock: 80, featured: false, bestseller: true, rating: 4.6, reviewCount: 89,
+    occasion: ["thank-you", "birthday"],
+    personalisation: { label: "Initials or name", placeholder: "A.K. or Arjun Khanna", maxLength: 20, required: true },
+    specifications: [
+      { label: "Size", value: "A5, 192 pages, 100 gsm" },
+      { label: "Cover", value: "Vegan leather, gold-foil stamp" },
+      { label: "Pen", value: "Weighted metal ballpoint, engraved" },
+      { label: "Bulk", value: "10+ pieces with logo, ask for a quote" },
+    ],
+    seoTitle: "Monogram Diary and Pen Set, Corporate Gift",
+    seoDescription: "Personalised A5 diary with foil monogram and engraved pen. Bulk corporate orders with logo. Delivered across India.",
+  },
+  {
+    slug: "diwali-dry-fruit-diya-hamper",
+    name: "Diwali Dry Fruit and Diya Hamper",
+    shortDescription: "Premium dry fruits, hand-painted diyas and festive sweets in a cane basket.",
+    description:
+      "Almonds, cashews, pistachios and anjeer in sealed pouches, a pair of hand-painted terracotta diyas, a rose-pistachio barfi box and a small string of marigold-colour lights. All in a reusable cane basket tied with a ribbon.\n\nOrder by the first week of November so it reaches before Diwali.",
+    price: 2499, compareAtPrice: 2999, category: "Special Occasions", categorySlug: "special-occasions",
+    tags: ["diwali", "dry fruits", "hamper", "diya"], stock: 30, featured: true, bestseller: false, rating: 4.9, reviewCount: 203,
+    occasion: ["diwali", "thank-you"],
+    specifications: [
+      { label: "Dry fruits", value: "Almonds, cashews, pistachios, anjeer (200 g each)" },
+      { label: "Also inside", value: "2 diyas, barfi box (250 g), fairy lights, card" },
+      { label: "Basket", value: "Reusable cane, 30 cm" },
+      { label: "Allergens", value: "Contains nuts and milk" },
+    ],
+    seoTitle: "Diwali Dry Fruit Gift Hamper with Diyas",
+    seoDescription: "Premium Diwali hamper with dry fruits, hand-painted diyas and sweets. Corporate and family gifting, delivered across India.",
+  },
+  {
+    slug: "handcrafted-brass-diya-set",
+    name: "Handcrafted Brass Diya Set",
+    shortDescription: "A pair of hand-finished brass diyas that look good long after the festival.",
+    description:
+      "Cast and polished by a family workshop that has been making brass lamps for three generations. Each diya has a wide base so it won't tip, and a long handle for aarti.\n\nCome with cotton wicks and a velvet pouch.",
+    price: 649, compareAtPrice: null, category: "Home & Decor", categorySlug: "home-decor",
+    tags: ["brass", "diya", "festive", "puja"], stock: 70, featured: false, bestseller: false, rating: 4.7, reviewCount: 77,
+    occasion: ["diwali", "housewarming"],
+    specifications: [
+      { label: "Set", value: "2 diyas, 9 cm wide" },
+      { label: "Material", value: "Solid brass" },
+      { label: "Care", value: "Wipe with lemon and salt to restore shine" },
+    ],
+    seoTitle: "Handcrafted Brass Diya Set for Diwali and Puja",
+    seoDescription: "Pair of hand-finished brass diyas with wicks and a velvet pouch. Diwali and housewarming gift.",
+  },
+  {
+    slug: "succulent-planter-duo",
+    name: "Succulent Planter Duo",
+    shortDescription: "Two live succulents in glazed ceramic pots, easy to keep alive.",
+    description:
+      "Two hardy succulents in hand-glazed ceramic pots, shipped with drainage stones and a care card that fits on the fridge. They like bright light and forget-me water.\n\nPlants ship in padded boxes to survive the journey.",
+    price: 549, compareAtPrice: 699, category: "Home & Decor", categorySlug: "home-decor",
+    tags: ["plant", "succulent", "ceramic", "desk"], stock: 48, featured: false, bestseller: false, rating: 4.5, reviewCount: 64,
+    occasion: ["housewarming", "thank-you", "birthday"],
+    specifications: [
+      { label: "Includes", value: "2 live succulents, 2 ceramic pots, stones, care card" },
+      { label: "Pot size", value: "9 cm and 7 cm" },
+      { label: "Care", value: "Bright light, water every 10 to 14 days" },
+    ],
+    seoTitle: "Succulent Planter Duo, Live Plant Gift",
+    seoDescription: "Two live succulents in glazed ceramic pots with care card. Easy-care housewarming gift delivered across India.",
+  },
+  {
+    slug: "birthstone-charm-bracelet",
+    name: "Birthstone Charm Bracelet",
+    shortDescription: "A hand-strung bracelet with their birthstone and a tiny initial charm.",
+    description:
+      "Glass and semi-precious beads strung on stretch cord, centred on a birthstone bead for the month you choose. A gold-tone initial charm hangs below.\n\nArrives in a velvet pouch with a card explaining the stone.",
+    price: 1199, compareAtPrice: 1499, category: "Birthday Gifts", categorySlug: "birthday-gifts",
+    tags: ["bracelet", "jewellery", "birthstone", "initial"], stock: 40, featured: false, bestseller: true, rating: 4.7, reviewCount: 112,
+    occasion: ["birthday", "anniversary"],
+    personalisation: { label: "Birth month and initial", placeholder: "March, S", maxLength: 20, required: true },
+    specifications: [
+      { label: "Length", value: "Fits wrists 14 to 18 cm (stretch)" },
+      { label: "Beads", value: "Glass and semi-precious stone" },
+      { label: "Charm", value: "Gold-tone initial" },
+    ],
+    seoTitle: "Birthstone Charm Bracelet with Initial",
+    seoDescription: "Personalised birthstone bracelet with initial charm in a velvet pouch. Birthday gift delivered across India.",
+  },
+  {
+    slug: "executive-welcome-kit",
+    name: "Executive Welcome Kit",
+    shortDescription: "Diary, bottle, mug and notecards in a branded box for new joiners and clients.",
+    description:
+      "An onboarding kit people photograph. Includes an A5 diary, a steel bottle, a ceramic mug, a set of notecards and a pen, packed in a matte black box. Add your logo to the box and diary.\n\nBulk pricing from 10 kits. Message us for a quote and a mock-up.",
+    price: 1799, compareAtPrice: 2199, category: "Corporate Gifts", categorySlug: "corporate-gifts",
+    tags: ["corporate", "welcome kit", "branding", "bulk"], stock: 15, featured: false, bestseller: false, rating: 4.7, reviewCount: 41,
+    occasion: ["thank-you"],
+    personalisation: { label: "Name (optional)", placeholder: "Riya Sharma", maxLength: 24, required: false },
+    specifications: [
+      { label: "Kit", value: "Diary, bottle (500 ml), mug, notecards, pen" },
+      { label: "Branding", value: "Logo on box and diary (10+ kits)" },
+      { label: "Lead time", value: "5 to 7 days for branded orders" },
+    ],
+    seoTitle: "Executive Welcome Kit for Employees and Clients",
+    seoDescription: "Corporate welcome kit with diary, bottle, mug and notecards. Logo branding on bulk orders. Delivered across India.",
+  },
+  {
+    slug: "our-story-photo-cushion",
+    name: "Our Story Photo Cushion",
+    shortDescription: "A soft cushion printed with your photo, a date and a line from your story.",
+    description:
+      "Printed on soft, washable velvet with a hidden zip and a plush insert. Your photo goes in the centre and your line below, such as 'Since 2019' or 'Our first Diwali'.\n\nColours stay bright after washing if you follow the care card.",
+    price: 799, compareAtPrice: 999, category: "Couple Gifts", categorySlug: "couple-gifts",
+    tags: ["cushion", "photo", "couple", "velvet"], stock: 55, featured: false, bestseller: false, rating: 4.6, reviewCount: 73,
+    occasion: ["anniversary", "birthday", "housewarming"],
+    personalisation: { label: "Line to print under the photo", placeholder: "Since 2019", maxLength: 32, required: true },
+    specifications: [
+      { label: "Size", value: "40 x 40 cm, with insert" },
+      { label: "Fabric", value: "Velvet, removable cover" },
+      { label: "Care", value: "Gentle machine wash, cold" },
+    ],
+    seoTitle: "Personalised Photo Cushion for Couples",
+    seoDescription: "Velvet photo cushion printed with your picture and message. Washable cover, delivered across India.",
+  },
+  {
+    slug: "name-puzzle-wooden-blocks",
+    name: "Name Puzzle Wooden Blocks",
+    shortDescription: "Chunky wooden blocks that spell your child's name, painted with child-safe colours.",
+    description:
+      "One block per letter, each with a small picture on the back, from child-safe water-based paint. Sanded smooth with rounded edges and stored in a cotton bag.\n\nLimited stock, as every set is cut and painted by hand.",
+    price: 699, compareAtPrice: null, category: "Kids Gifts", categorySlug: "kids-gifts",
+    tags: ["toy", "wooden", "name", "kids"], stock: 4, featured: false, bestseller: false, rating: 4.8, reviewCount: 49,
+    occasion: ["birthday"],
+    personalisation: { label: "Name (up to 8 letters)", placeholder: "Aarav", maxLength: 8, required: true },
+    specifications: [
+      { label: "Blocks", value: "One per letter, 4.5 cm each" },
+      { label: "Paint", value: "Water-based, child-safe" },
+      { label: "Age", value: "2 years and above" },
+    ],
+    seoTitle: "Personalised Wooden Name Blocks for Kids",
+    seoDescription: "Hand-painted wooden name blocks with child-safe paint and cotton bag. Birthday gift for toddlers.",
+  },
+  {
+    slug: "365-notes-love-jar",
+    name: "365 Notes Love Jar",
+    shortDescription: "A glass jar with 365 folded notes, one to open every day for a year.",
+    description:
+      "A glass jar with a wooden lid and 365 folded notes in soft colours. We leave them blank for you to write, or you can send us 30 lines and we'll print them.\n\nIt makes a daily ritual out of one gift.",
+    price: 649, compareAtPrice: 799, category: "Anniversary Gifts", categorySlug: "anniversary-gifts",
+    tags: ["jar", "notes", "romantic", "keepsake"], stock: 0, featured: false, bestseller: false, rating: 4.9, reviewCount: 118,
+    occasion: ["anniversary", "birthday"],
+    specifications: [
+      { label: "Jar", value: "Glass, wooden lid, 1.2 litre" },
+      { label: "Notes", value: "365, blank or printed" },
+      { label: "Restock", value: "Every 2 weeks" },
+    ],
+    seoTitle: "365 Notes Love Jar, Anniversary Keepsake",
+    seoDescription: "Glass jar with 365 folded notes. A year of daily messages for anniversaries and birthdays.",
+  },
+  {
+    slug: "chai-lovers-gift-crate",
+    name: "Chai Lover's Gift Crate",
+    shortDescription: "Loose-leaf masala chai, two kulhads, jaggery and biscuits in a wooden crate.",
+    description:
+      "Our blend of Assam tea, cardamom, ginger and black pepper, with jaggery cubes, two clay kulhads, a strainer and a tin of nankhatai. Packed in a small wooden crate you'll reuse.\n\nFor the person who judges everyone's chai.",
+    price: 1199, compareAtPrice: null, category: "Special Occasions", categorySlug: "special-occasions",
+    tags: ["chai", "tea", "hamper", "crate"], stock: 28, featured: false, bestseller: false, rating: 4.7, reviewCount: 84,
+    occasion: ["birthday", "housewarming", "thank-you"],
+    specifications: [
+      { label: "Chai", value: "100 g loose-leaf masala blend" },
+      { label: "Also inside", value: "2 kulhads, strainer, jaggery, nankhatai tin" },
+      { label: "Crate", value: "Wood, 28 x 20 x 10 cm" },
+      { label: "Allergens", value: "Biscuits contain gluten and milk" },
+    ],
+    seoTitle: "Chai Lover's Gift Crate with Kulhads",
+    seoDescription: "Masala chai gift crate with kulhads, jaggery and biscuits. Housewarming and birthday gift delivered across India.",
+  },
+  {
+    slug: "rakhi-and-mithai-box",
+    name: "Rakhi and Mithai Box",
+    shortDescription: "A handmade rakhi, roli-chawal and a box of soan papdi and kaju katli.",
+    description:
+      "A hand-beaded rakhi on a silk thread, a roli-chawal pouch and a box of fresh kaju katli and soan papdi from our partner halwai in Ujjain. Arrives with a card for your sibling.\n\nDelivery dates for Raksha Bandhan are confirmed on WhatsApp.",
+    price: 899, compareAtPrice: 1099, category: "Special Occasions", categorySlug: "special-occasions",
+    tags: ["rakhi", "mithai", "festival", "sibling"], stock: 90, featured: true, bestseller: true, rating: 4.8, reviewCount: 156,
+    occasion: ["rakhi"],
+    personalisation: { label: "Sibling's name for the card", placeholder: "Bhaiya", maxLength: 20, required: false },
+    specifications: [
+      { label: "Rakhi", value: "Hand-beaded on silk thread" },
+      { label: "Mithai", value: "Kaju katli and soan papdi, 250 g" },
+      { label: "Includes", value: "Roli-chawal pouch, card" },
+      { label: "Allergens", value: "Contains nuts and milk" },
+    ],
+    seoTitle: "Rakhi and Mithai Gift Box for Brother and Sister",
+    seoDescription: "Hand-beaded rakhi with roli-chawal and fresh mithai. Raksha Bandhan gift delivered across India.",
+  },
+  {
+    slug: "little-thank-you-box",
+    name: "Little Thank-You Box",
+    shortDescription: "A small box with a candle, chocolate and a card, for the person who helped.",
+    description:
+      "For the neighbour who watered your plants, the teacher, the colleague who covered for you. A tea-light candle, a dark chocolate bar, a bookmark and a note card, all in a small box with a ribbon.\n\nAffordable enough to send often.",
+    price: 499, compareAtPrice: null, category: "Special Occasions", categorySlug: "special-occasions",
+    tags: ["thank you", "small gift", "candle", "chocolate"], stock: 100, featured: false, bestseller: false, rating: 4.6, reviewCount: 52,
+    occasion: ["thank-you", "diwali"],
+    personalisation: { label: "Name for the card (optional)", placeholder: "Mrs. Kapoor", maxLength: 24, required: false },
+    specifications: [
+      { label: "Box", value: "16 x 12 x 6 cm" },
+      { label: "Inside", value: "Tea-light candle, 40 g chocolate, bookmark, card" },
+      { label: "Allergens", value: "Chocolate contains milk" },
+    ],
+    seoTitle: "Little Thank-You Gift Box under 500",
+    seoDescription: "A small gift box with candle, chocolate and card. Say thank you without overthinking it.",
+  },
+];
+
+export const products = raw.map((p, i) => ({
+  id: `seed_${String(i + 1).padStart(3, "0")}`,
+  images: productImages(p.slug),
+  compareAtPrice: null,
+  personalisation: null,
+  active: true,
+  ...p,
+}));
