@@ -36,17 +36,17 @@ export default function Hero({ content }) {
 
   return (
     <section ref={ref} className="relative overflow-hidden" aria-labelledby="hero-heading">
-      <div className="container-page grid items-center gap-10 pb-14 pt-10 sm:pt-14 lg:grid-cols-12 lg:gap-6 lg:pb-24 lg:pt-16">
-        <div className="lg:col-span-6 xl:col-span-6">
+      <div className="container-page grid grid-cols-1 items-center gap-8 pb-10 pt-6 sm:gap-10 sm:pb-14 sm:pt-14 lg:grid-cols-12 lg:gap-6 lg:pb-24 lg:pt-16 w-full">
+        <div className="w-full min-w-0 lg:col-span-6 xl:col-span-6">
           <div id="hero-heading"><Words text={content.headline} /></div>
-          <motion.p className="mt-6 max-w-[34rem] text-lead text-ink-soft" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease, delay: 0.65 }}>
+          <motion.p className="mt-4 sm:mt-6 max-w-[34rem] text-base sm:text-lead text-ink-soft" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease, delay: 0.65 }}>
             {content.sub}
           </motion.p>
-          <motion.div className="mt-8 flex flex-wrap gap-3" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease, delay: 0.8 }}>
-            <Button href={content.primaryCta.href} size="lg">{content.primaryCta.label}</Button>
-            <Button href={content.secondaryCta.href} variant="outline" size="lg">{content.secondaryCta.label}</Button>
+          <motion.div className="mt-6 sm:mt-8 flex flex-col sm:flex-row flex-wrap gap-3" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease, delay: 0.8 }}>
+            <Button href={content.primaryCta.href} size="lg" className="w-full sm:w-auto">{content.primaryCta.label}</Button>
+            <Button href={content.secondaryCta.href} variant="outline" size="lg" className="w-full sm:w-auto">{content.secondaryCta.label}</Button>
           </motion.div>
-          <motion.ul className="mt-10 grid gap-3 border-t border-line pt-6 text-sm sm:grid-cols-3 sm:gap-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1 }}>
+          <motion.ul className="mt-8 sm:mt-10 grid gap-3 border-t border-line pt-5 sm:pt-6 text-sm grid-cols-1 sm:grid-cols-3 sm:gap-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1 }}>
             {content.trust.map((t) => {
               const Icon = icons[t.icon] || FiPackage;
               return (
@@ -60,8 +60,8 @@ export default function Hero({ content }) {
         </div>
 
         {/* Visual composition */}
-        <div className="relative mx-auto mt-8 w-full max-w-[560px] lg:col-span-6 lg:mt-0 lg:max-w-none lg:pl-8">
-          <motion.div className="relative mx-auto aspect-[1/1.02] w-full max-w-[560px] sm:aspect-[1/0.95] lg:ml-auto" initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease, delay: 0.2 }}>
+        <div className="relative mx-auto mt-6 sm:mt-8 w-full max-w-[420px] sm:max-w-[560px] lg:col-span-6 lg:mt-0 lg:max-w-none lg:pl-8">
+          <motion.div className="relative mx-auto aspect-[1/1.05] sm:aspect-[1/0.95] w-full max-w-[420px] sm:max-w-[560px] lg:ml-auto" initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease, delay: 0.2 }}>
             <div className="absolute inset-x-[6%] bottom-0 top-[12%] bg-blush" />
             <div className="absolute inset-x-[6%] bottom-0 top-[12%] translate-x-3 translate-y-3 border border-rani/60" aria-hidden="true" />
             <motion.div style={{ y: yFrame }} className="absolute right-[1%] top-[4%] w-[60%]">
@@ -73,7 +73,7 @@ export default function Hero({ content }) {
             <motion.div style={{ y: yBox }} className="absolute -bottom-[2%] right-[0%] w-[46%]">
               <Image src={heroImages.box} alt="A gift box with a marigold ribbon" width={800} height={1000} priority sizes="(min-width:1024px) 260px, 40vw" />
             </motion.div>
-            <div className="absolute left-[1%] top-[24%] z-10 origin-top-left max-sm:scale-[0.86] sm:left-0">
+            <div className="absolute left-[1%] top-[24%] z-10 origin-top-left max-sm:scale-[0.82] sm:left-0">
               <GiftTag toPlaceholder={content.tag.toPlaceholder} messagePlaceholder={content.tag.messagePlaceholder} caption={content.tag.caption} />
             </div>
           </motion.div>

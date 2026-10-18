@@ -19,10 +19,10 @@ export default function StorySection({ content }) {
         </motion.div>
       </div>
       <div className="absolute inset-0 bg-ink/70" aria-hidden="true" />
-      <div className="container-page relative py-24 sm:py-32 lg:py-40">
-        <blockquote id="story-heading" className="max-w-4xl font-display text-[clamp(2rem,5.4vw,4.4rem)] leading-[1.08] tracking-tight">{content.quote}</blockquote>
-        <p className="mt-8 max-w-xl text-lead text-paper/80">{content.text}</p>
-        <Button href={content.cta.href} variant="light" size="lg" className="mt-9">{content.cta.label}</Button>
+      <div className="container-page relative py-16 sm:py-28 lg:py-40">
+        <blockquote id="story-heading" className="max-w-4xl font-display text-[clamp(1.5rem,5vw,4.4rem)] leading-[1.12] tracking-tight">{content.quote}</blockquote>
+        <p className="mt-5 sm:mt-8 max-w-xl text-base sm:text-lead text-paper/80">{content.text}</p>
+        <Button href={content.cta.href} variant="light" size="lg" className="mt-6 sm:mt-9 w-full sm:w-auto">{content.cta.label}</Button>
       </div>
     </section>
   );

@@ -23,11 +23,11 @@ module.exports = {
         hand: ["var(--font-hand)", "cursive"],
       },
       fontSize: {
-        "display-xl": ["clamp(2.7rem, 6.8vw, 5.6rem)", { lineHeight: "1.02", letterSpacing: "-0.02em" }],
-        "display-lg": ["clamp(2.15rem, 4.6vw, 3.7rem)", { lineHeight: "1.05", letterSpacing: "-0.015em" }],
-        "display-md": ["clamp(1.65rem, 2.9vw, 2.4rem)", { lineHeight: "1.12", letterSpacing: "-0.01em" }],
-        "display-sm": ["1.3rem", { lineHeight: "1.2" }],
-        lead: ["1.125rem", { lineHeight: "1.7" }],
+        "display-xl": ["clamp(2.1rem, 6.2vw, 5.6rem)", { lineHeight: "1.05", letterSpacing: "-0.02em" }],
+        "display-lg": ["clamp(1.65rem, 4.2vw, 3.7rem)", { lineHeight: "1.1", letterSpacing: "-0.015em" }],
+        "display-md": ["clamp(1.35rem, 2.8vw, 2.4rem)", { lineHeight: "1.15", letterSpacing: "-0.01em" }],
+        "display-sm": ["clamp(1.15rem, 2vw, 1.3rem)", { lineHeight: "1.25" }],
+        lead: ["clamp(1rem, 1.4vw, 1.125rem)", { lineHeight: "1.65" }],
       },
       borderRadius: { sm: "3px", DEFAULT: "6px", md: "8px", lg: "14px" },
       boxShadow: {

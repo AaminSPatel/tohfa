@@ -50,7 +50,7 @@ export default async function HomePage() {
       <ReviewsCarousel title={c.reviews.title} reviews={reviews} average={average || 4.8} total={total || 1000} />
       <StorySection content={c.story} />
       <FinalCta content={c.finalCta} />
-      <InquiryPopup />
+     {/*  <InquiryPopup /> */}
       <JsonLd data={[localBusinessLd(), itemListLd("Best selling gifts", best)]} />
     </>
   );

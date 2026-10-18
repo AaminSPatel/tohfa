@@ -29,8 +29,8 @@ export default function ProductCard({ product, priority = false, sizes = SIZES }
         )}
         <QuickAdd product={product} />
       </div>
-      <div className="mt-3.5">
-        <h3 className="font-sans text-[1rem] font-medium leading-snug">
+      <div className="mt-3 sm:mt-3.5">
+        <h3 className="font-sans text-[0.92rem] sm:text-[1rem] font-medium leading-snug line-clamp-2">
           <Link href={`/product/${product.slug}`} className="hover:text-rani">{product.name}</Link>
         </h3>
         <Rating value={product.rating} count={product.reviewCount} size={12} className="mt-1" />
